@@ -278,10 +278,6 @@ def temperaturaDiaria(df):
     # Unificar datos
     result = result.merge(precipitacion, on='datetime', how='left')
     result.columns = ['Fecha', 'Mínima °C', 'Máxima °C', 'Precipitación mm']
-    
-    # Agregar nombre del día
-    result['Fecha'] = (result['Fecha'].astype(str) + " - " + 
-                      pd.to_datetime(result['Fecha']).dt.day_name()) #locale='es'
 
     return result
 
