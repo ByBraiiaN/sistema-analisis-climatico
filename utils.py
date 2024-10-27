@@ -15,6 +15,8 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import streamlit as st
 import numpy as np
+import locale
+locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 # Constantes globales
 FILE_PAISES = 'paises_ciudades.csv'
