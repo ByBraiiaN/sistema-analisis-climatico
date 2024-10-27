@@ -281,7 +281,7 @@ def temperaturaDiaria(df):
     
     # Agregar nombre del día
     result['Fecha'] = (result['Fecha'].astype(str) + " - " + 
-                      pd.to_datetime(result['Fecha']).dt.day_name(locale='es'))
+                      pd.to_datetime(result['Fecha']).dt.day_name()) #locale='es'
 
     return result
 
