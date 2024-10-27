@@ -10,7 +10,7 @@ condiciones climáticas.
 - Base de datos de ciudades: [SimpleMaps](https://simplemaps.com/data/world-cities)
 
 ## 🚀 Demo en Vivo
-Prueba la aplicación en: [Sistema de Análisis Climático](https://streamlit.app/)
+Prueba la aplicación en: [Sistema de Análisis Climático](https://sistema-climatico.streamlit.app/)
 
 ## 🛠️ Instalación
 
@@ -54,3 +54,5 @@ streamlit run --client.showSidebarNavigation=False Examen_Final.py
 
 ## 📷 Capturas de Pantalla
 ![Screenshot de la Aplicación](img/screenshot.png)
+![Screenshot de la Aplicación](img/screenshot2.png)
+![Screenshot de la Aplicación](img/screenshot3.png)
