@@ -281,16 +281,27 @@ def temperaturaDiaria(df):
 
     return result
 
-def cargarHistorial(archivo):
+def cargarHistorialDesdeArchivo(archivos):
     """
-    Carga datos históricos desde un archivo.
+    Carga datos históricos desde uno o varios archivos y los concatena si son múltiples.
     """
-    if archivo.type == "text/csv":
-        df = pd.read_csv(archivo)
-    else:
-        df = pd.read_excel(archivo)
+    dfs = []  # Lista para almacenar los DataFrames de cada archivo
 
-    return df
+    for archivo in archivos:
+        if archivo.type == "text/csv":
+            df = pd.read_csv(archivo)
+        else:
+            df = pd.read_excel(archivo)
+        
+        dfs.append(df)  # Añadir el DataFrame a la lista
+
+     # Concatenar todos los DataFrames si hay múltiples archivos, sino devolver el único
+    if len(dfs) > 1:
+        df_completo = pd.concat(dfs, ignore_index=True)
+    else:
+        df_completo = dfs[0]  # Si es solo uno, devolver el único DataFrame
+
+    return df_completo
 
 def obtenerDatosEstadisticos(df):
     """
