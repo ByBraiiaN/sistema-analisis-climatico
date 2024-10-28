@@ -47,7 +47,7 @@ if uploaded_files:
     st.snow()
 
     # Obtener un dataframe desde el archivo
-    df_clima = utl.cargarHistorialDesdeArchivo(uploaded_files)
+    df_clima = utl.cargarHistorialDesdeArchivos(uploaded_files)
 
     # Visualización y edición de datos
     df_clima = st.data_editor(df_clima, height=300)
