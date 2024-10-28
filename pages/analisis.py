@@ -36,18 +36,18 @@ st.divider()
 utl.generarMenu()
 
 # Carga de archivo CSV
-uploaded_file = st.file_uploader(
+uploaded_files = st.file_uploader(
     label=":date: Seleccione el archivo CSV a analizar",
     type=["csv"],
     help="Seleccione el archivo descargado con los datos"
 )
 
 # Procesamiento de datos si se carga un archivo
-if uploaded_file:
+if uploaded_files:
     st.snow()
 
     # Obtener un dataframe desde el archivo
-    df_clima = utl.cargarHistorial(uploaded_file)
+    df_clima = utl.cargarHistorialDesdeArchivo(uploaded_files)
 
     # Visualización y edición de datos
     df_clima = st.data_editor(df_clima, height=300)
@@ -55,7 +55,7 @@ if uploaded_file:
     st.divider()
 
      # Sección de estadísticas
-    st.subheader(f":triangular_ruler: Estadisticas para {uploaded_file.name}")
+    st.subheader(f":triangular_ruler: Estadisticas para {uploaded_files.name}")
 
     # Obtener el estadisticas en un dicccionario
     estadisticas = utl.obtenerDatosEstadisticos(df_clima)
